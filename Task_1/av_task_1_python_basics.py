@@ -23,6 +23,7 @@ while x < 100:
     # In each iteration of the loop adding 1 to x var. When x var will reach 100 while won't be met and loop will exit
     x = x + 1
 
+
 # Check how many values list currently include. For debugging
 # print("Currently list includes " + str(len(one_hundred_rand_num)) + " elements.")
 
@@ -87,7 +88,23 @@ for i in even_numbers:
 for i in odd_numbers:
     odd_sum = odd_sum + i
 
+# Set lists as empty for checking that ZeroDivisionError handling works
+# even_numbers = []
+# odd_numbers = []
+
 # Task4 - print both average result in console
-print("Average for even numbers: " + str(round(even_sum / len(even_numbers), 2)))
-print("Average for odd numbers: " + str(round(odd_sum / len(odd_numbers), 2)))
+# Try to division sum of all even numbers for it quantity (amount of numbers in list). Round result by 2 for convenience
+try:
+    print("Average for even numbers: " + str(round(even_sum / len(even_numbers), 2)))
+# When even numbers list will be empty ZeroDivision Error could occur. Handling it.
+except ZeroDivisionError:
+    print("Even numbers list is empty. Couldn't divide by zero.")
+
+# Try to division sum of all odd numbers for its quantity (amount of numbers in list)
+try:
+    print("Average for odd numbers: " + str(round(odd_sum / len(odd_numbers), 2)))
+# When even numbers list will be empty ZeroDivision Error could occur. Handling it.
+except ZeroDivisionError:
+    print("Odd numbers list is empty. Couldn't divide by zero.")
+
 print("Thank you for your time! :)")
