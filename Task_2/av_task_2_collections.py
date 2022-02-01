@@ -13,8 +13,6 @@ import string
 
 
 # Method to create random dictionary which will be inserted into list.
-
-
 def generating_random_dict():
     # System int which will be used for iterations in while loop.
     it = 0
@@ -32,8 +30,6 @@ def generating_random_dict():
     return rand_dict
 
 
-# My test dictionary
-# main_list = [{'A': 112, 'B': 922, 'C': 100, 'D': 45}, {'A': 11, 'B': 73, 'C': 1001}, {'A': 300}]
 # Creating empty list for Task1.
 main_list = []
 
@@ -41,10 +37,63 @@ main_list = []
 for i in range(random.randint(2, 10)):
     # In each random dictionary will be appended to the list
     main_list.append(generating_random_dict())
-print(main_list)
 
-# Creating dictionary which will include final result. As a start - saving first dictionary from list to it.
-final_dict = main_list[0]
+# Oleksandr  test dictionary
+# main_list = [{'a':1,'b':3,'c':3,'d':4},{'b':3,'c':4,'e':5},{'b':2,'d':3,'f':7},{'b':3,'h':0}]
+
+print('Initial list is: ' + str(main_list))
+
+
+# Method to save keys, existing values and indexes of the list. It is need to save indexes to understood from which
+# dictionary (number) value was extracted, my first solution didn't allow to do this, so creating preliminary list.
+def save_list_values_and_indexes(input_list):
+    prel_dict = {}
+    # Iterating through each dictionary of our main_list
+    for i in range(len(input_list)):
+        # Iterating through each key/value a pair of dictionary
+        for key, value in main_list[i].items():
+            # When key was not in preliminary list before - just insert it. i var will serve us as index
+            if key not in prel_dict.keys():
+                # Creating new key, adding value and index of it. +1 because i starts from 0, while in task we start
+                # from one
+                prel_dict[key] = [[value], [i]]
+            # When key existing already - just appending element consisting of value and index.
+            elif key in prel_dict.keys():
+                # Value addition
+                prel_dict[key][0].append(value)
+                # Index addition
+                prel_dict[key][1].append(i)
+    return prel_dict
+
+
+# Method to scan through preliminary dictionary, select max values, add _x postfix
+def get_max_values_from_prel_dictionary(dict):
+    # Creating empty dictionary to save results
+    final_dict = {}
+    # Iterating through all key/value pairs of preliminary dictionary
+    for key, value in dict.items():
+        # When for letter we have > 1 value - select max value
+        if len(value[0]) > 1:
+            # Saving max value into var because we will need it 2 times - for value itself and searching dict num
+            max_val = max(value[0])
+            # Adding _x postfix, where x is number of dictionary with max value
+            key = key + '_' + str(value[1][value[0].index(max_val)])
+            # Inserting key/value pair in final dictionary
+            final_dict[key] = max_val
+        # When value only one time across all dictionaries - simply insert it
+        elif len(value[0]) == 1:
+            # Inserting key/value pair in final dictionary
+            final_dict[key] = value[0][0]
+    return final_dict
+
+
+# Getting preliminary list
+prel_list = (save_list_values_and_indexes(main_list))
+# Getting final_list and printing it
+print('Final dictionary: ' + str(get_max_values_from_prel_dictionary(prel_list)))
+
+'''
+# Legacy code
 # Variable used for controlling loop and with which dictionary from list we are currently comparing.
 comp_with_lst_num = 1
 # While loop to compare dictionaries. For example, we will compare 1 vs 2nd Then result of comparison of 1 and 2nd
@@ -86,6 +135,4 @@ while comp_with_lst_num < len(main_list):
     final_dict = final_dict | main_list[comp_with_lst_num]
     # Adding 1 for our system variable to control loop.
     comp_with_lst_num += 1
-
-print(final_dict)
-print('Thanks for your time again :)')
+'''
