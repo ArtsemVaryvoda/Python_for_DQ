@@ -8,7 +8,7 @@ class RecordGenerator:
         self.text = input(f"Please, enter {self.__class__.__name__} message text: ")
 
     def to_file(self):
-        with open('News_feed.txt', 'a') as f:
+        with open('News_feed.txt', 'a', encoding="utf-8") as f:
             f.write(self.record + '\n' + '\n')
         print(self.record + ' was added')
 
