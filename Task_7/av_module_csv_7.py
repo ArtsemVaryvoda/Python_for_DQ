@@ -41,7 +41,7 @@ def main():
     file_content = locate_file(file_path, input_file_name)
     file_data = FileData(file_content)
     to_file(str(file_data))
-    work_with_csv = CSVStat(default_path, news_feed)
+    work_with_csv = CSVStat(file_path, news_feed)
     delete_source_file()
 
 
