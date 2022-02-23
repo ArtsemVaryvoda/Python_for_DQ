@@ -1,0 +1,47 @@
+News --------------------
+Test_Text_1
+Minsk, 2022/02/23 23.26
+
+PrivateAd ---------------
+Text_ad_number_1
+Actual until: 2022/03/03 7 days left
+
+Congratulations ---------
+Sir, gratz to you in this day!
+Congratulations with your 27 birthday!
+Best Regards, Artsem
+
+News --------------------
+Something happened today right here
+Minsk, 2022/02/23 23.29
+
+News --------------------
+Something happened3 yesterday not so interesting
+London, 2022/02/23 23.29
+
+PrivateAd ---------------
+I want to sell a bike still
+Actual until: 2022/02/28 4 days left
+
+Congratulations ---------
+Dear friend, i want to wish you good luck in this great day!
+Congratulations with your 27 birthday!
+Best Regards, your friend.
+
+News --------------------
+News is here, let's read it
+London, 2022/02/23 23.29
+
+News --------------------
+Another very very interesting fact that nothing is happening!!!
+Prague, 2022/02/23 23.29
+
+PrivateAd ---------------
+Guys, someone want to buy my bike?
+Actual until: 2023/02/28 369 days left
+
+Congratulations ---------
+It's one of the best things in the world to celebrate you with your birthday.
+Congratulations with your 32 birthday!
+Best Regards, your friend.
+
