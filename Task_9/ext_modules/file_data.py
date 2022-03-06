@@ -31,7 +31,6 @@ class FileData:
     @staticmethod
     def normalize_list(record_elements):
         for i in range(len(record_elements)):
-            print(type(record_elements[i]))
             record_elements[i] = normalize_string_case(record_elements[i])
         return record_elements
 
