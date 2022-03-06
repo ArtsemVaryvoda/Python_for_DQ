@@ -1,0 +1,17 @@
+<input_data>
+ <news_message>
+   <type>News</type>
+   <text>Yet another text for our beautiful newsfeed.</text>
+   <city>Boston</city>
+ </news_message>
+ <news_message>
+   <type>PrivateAd</type>
+   <text>Hello guys, is someone interested in buying motorcycle?</text>
+   <valid_until>2022/10/10</valid_until>
+ </news_message>
+ <news_message>
+   <type>Congratulations</type>
+   <text>Just wanna to say warn words to my awesome friend in this bright day.</text>
+   <birthday_year>1995</birthday_year>
+ </news_message>
+</input_data>
